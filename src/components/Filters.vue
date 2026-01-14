@@ -830,9 +830,16 @@ onMounted(() => {
 
 /* Stock Filter */
 .stock-filter {
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   border-bottom: none;
-  background: white;
+  background: transparent;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  border: none;
+}
+
+.stock-filter:hover {
+  background: rgba(252, 231, 243, 0.3);
 }
 
 .check-icon {
