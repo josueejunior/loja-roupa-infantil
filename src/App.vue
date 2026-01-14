@@ -308,20 +308,20 @@ const clearAllFilters = () => {
     ),
     /* Efeito de ruído pontilhado */
     radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.08) 1px, transparent 0),
-    /* Círculos coloridos vibrantes - Rosa */
-    radial-gradient(circle at 15% 25%, rgba(255, 182, 193, 0.4) 0, transparent 50%),
-    /* Azul claro */
-    radial-gradient(circle at 85% 15%, rgba(173, 216, 230, 0.4) 0, transparent 50%),
-    /* Amarelo */
-    radial-gradient(circle at 5% 75%, rgba(255, 228, 181, 0.45) 0, transparent 55%),
-    /* Verde claro */
-    radial-gradient(circle at 95% 80%, rgba(152, 251, 152, 0.4) 0, transparent 50%),
-    /* Roxo/Lavanda */
-    radial-gradient(circle at 50% 10%, rgba(221, 160, 221, 0.35) 0, transparent 45%),
-    /* Laranja claro */
-    radial-gradient(circle at 70% 60%, rgba(255, 218, 185, 0.35) 0, transparent 50%),
-    /* Base gradiente colorido alegre */
-    linear-gradient(135deg, #fff0f5 0%, #ffe4e6 20%, #e0f2fe 40%, #f0f9ff 60%, #fef3c7 80%, #fce7f3 100%);
+    /* Círculos suaves e delicados - Rosa pastel */
+    radial-gradient(circle at 15% 25%, rgba(255, 228, 240, 0.25) 0, transparent 60%),
+    /* Azul claro muito suave */
+    radial-gradient(circle at 85% 15%, rgba(240, 249, 255, 0.2) 0, transparent 60%),
+    /* Amarelo amanteigado suave */
+    radial-gradient(circle at 5% 75%, rgba(255, 250, 235, 0.3) 0, transparent 60%),
+    /* Verde claro muito suave */
+    radial-gradient(circle at 95% 80%, rgba(245, 255, 245, 0.2) 0, transparent 60%),
+    /* Lavanda suave */
+    radial-gradient(circle at 50% 10%, rgba(250, 245, 255, 0.2) 0, transparent 60%),
+    /* Creme suave */
+    radial-gradient(circle at 70% 60%, rgba(255, 252, 245, 0.25) 0, transparent 60%),
+    /* Base suave e limpa - Branco com toques sutis de rosa e creme */
+    linear-gradient(135deg, #ffffff 0%, #fffefb 30%, #fff5f8 60%, #ffffff 100%);
   background-size: 
     100% 100%,
     100% 100%,
@@ -355,7 +355,7 @@ const clearAllFilters = () => {
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1.75rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 242, 242, 0.8) 50%, rgba(239, 246, 255, 0.8) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 250, 240, 0.95) 50%, rgba(255, 255, 255, 0.98) 100%);
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(233, 30, 99, 0.12), 0 4px 12px rgba(59, 130, 246, 0.1), 0 2px 6px rgba(251, 191, 36, 0.1);
   border: 2px solid rgba(255, 182, 193, 0.3);
@@ -382,7 +382,7 @@ const clearAllFilters = () => {
   content: '';
   width: 5px;
   height: 28px;
-  background: linear-gradient(135deg, #f472b6 0%, #60a5fa 50%, #fbbf24 100%);
+  background: linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
   border-radius: 3px;
   box-shadow: 0 2px 6px rgba(244, 114, 182, 0.4);
 }
@@ -467,7 +467,7 @@ const clearAllFilters = () => {
 .clear-filters-link {
   margin-top: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  background: linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -520,7 +520,7 @@ const clearAllFilters = () => {
 }
 
 .page-btn.active {
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  background: linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
   color: white;
   border-color: transparent;
   box-shadow: 0 4px 16px rgba(233, 30, 99, 0.4);

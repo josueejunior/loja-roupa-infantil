@@ -44,9 +44,9 @@
             <p class="detail-category">{{ product.category }}</p>
 
             <div class="detail-price">
-              <span class="current-price">R$ {{ product.price.toFixed(2) }}</span>
+              <span class="current-price">R$ {{ formatPrice(product.price) }}</span>
               <span v-if="product.originalPrice" class="original-price">
-                R$ {{ product.originalPrice.toFixed(2) }}
+                R$ {{ formatPrice(product.originalPrice) }}
               </span>
             </div>
 
@@ -125,7 +125,7 @@
               </div>
               <div class="related-info">
                 <h3 class="related-name">{{ item.name }}</h3>
-                <p class="related-price">R$ {{ item.price.toFixed(2) }}</p>
+                <p class="related-price">R$ {{ formatPrice(item.price) }}</p>
               </div>
             </RouterLink>
           </div>
@@ -201,6 +201,14 @@ const handleImageError = (event) => {
   event.target.src = 'https://via.placeholder.com/500x600/F3F4F6/9CA3AF?text=Imagem+Indispon%C3%ADvel';
 };
 
+const formatPrice = (price) => {
+  const numPrice = Number(price);
+  if (Number.isNaN(numPrice) || !Number.isFinite(numPrice)) {
+    return '0.00';
+  }
+  return numPrice.toFixed(2);
+};
+
 const addToCart = () => {
   if (product.value && selectedSize.value && selectedColor.value) {
     cartStore.addToCart(product.value, selectedSize.value, selectedColor.value);
@@ -233,7 +241,7 @@ const addToCart = () => {
     radial-gradient(circle at 90% 10%, rgba(255, 228, 230, 0.9) 0, transparent 45%),
     radial-gradient(circle at 0% 80%, rgba(255, 213, 230, 0.9) 0, transparent 50%),
     radial-gradient(circle at 85% 85%, rgba(252, 207, 238, 0.9) 0, transparent 45%),
-    linear-gradient(to bottom, #fff7fb 0%, #ffeaf3 35%, #ffe4f0 70%, #fde7f3 100%);
+    linear-gradient(to bottom, #ffffff 0%, #fffefb 30%, #fff5f8 60%, #ffffff 100%);
   background-size:
     100% 100%,
     100% 100%,
@@ -576,7 +584,7 @@ const addToCart = () => {
   margin-top: 1rem;
   padding: 0.65rem 1.25rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  background: linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
   color: white;
   text-decoration: none;
   font-size: 0.875rem;

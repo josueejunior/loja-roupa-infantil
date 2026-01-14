@@ -36,7 +36,7 @@
               <p class="cart-item-details">
                 Tamanho: {{ item.size }} | Cor: {{ item.color }}
               </p>
-              <p class="cart-item-price">R$ {{ item.price.toFixed(2) }}</p>
+              <p class="cart-item-price">R$ {{ formatPrice(item.price) }}</p>
             </div>
             
             <div class="cart-item-controls">
@@ -57,20 +57,20 @@
         <div class="cart-summary">
           <div class="summary-row">
             <span>Subtotal:</span>
-            <span>R$ {{ totalPrice.toFixed(2) }}</span>
+            <span>R$ {{ formatPrice(totalPrice) }}</span>
           </div>
           <div class="summary-row">
             <span>Frete:</span>
-            <span>{{ shippingCost === 0 ? 'Grátis' : `R$ ${shippingCost.toFixed(2)}` }}</span>
+            <span>{{ shippingCost === 0 ? 'Grátis' : `R$ ${formatPrice(shippingCost)}` }}</span>
           </div>
           <div class="summary-row total">
             <span>Total:</span>
-            <span>R$ {{ (totalPrice + shippingCost).toFixed(2) }}</span>
+            <span>R$ {{ formatPrice(totalPrice + shippingCost) }}</span>
           </div>
           <div v-if="totalPrice < 200" class="min-order-warning">
             <IconWarning class="warning-icon" />
             <span v-if="remainingForFreeShipping > 0">
-              Faltam <strong>R$ {{ remainingForFreeShipping.toFixed(2) }}</strong> para ganhar <strong>frete grátis</strong>.
+              Faltam <strong>R$ {{ formatPrice(remainingForFreeShipping) }}</strong> para ganhar <strong>frete grátis</strong>.
             </span>
           </div>
         </div>
@@ -107,10 +107,18 @@ const emit = defineEmits(['close']);
 const cartStore = useCartStore();
 const { cart, updateQuantity: updateCartQuantity, removeFromCart } = cartStore;
 
-const totalPrice = computed(() => cartStore.totalPrice);
-const shippingCost = computed(() => totalPrice.value >= 200 ? 0 : 15.00);
+const totalPrice = computed(() => {
+  const total = cartStore.totalPrice;
+  const numTotal = Number(total);
+  return Number.isNaN(numTotal) || !Number.isFinite(numTotal) ? 0 : numTotal;
+});
+const shippingCost = computed(() => {
+  const price = Number(totalPrice.value) || 0;
+  return price >= 200 ? 0 : 15.00;
+});
 const remainingForFreeShipping = computed(() => {
-  const remaining = 200 - totalPrice.value;
+  const price = Number(totalPrice.value) || 0;
+  const remaining = 200 - price;
   return remaining > 0 ? remaining : 0;
 });
 
@@ -120,6 +128,14 @@ const updateQuantity = (index, quantity) => {
 
 const removeItem = (index) => {
   cartStore.removeFromCart(index);
+};
+
+const formatPrice = (price) => {
+  const numPrice = Number(price);
+  if (Number.isNaN(numPrice) || !Number.isFinite(numPrice)) {
+    return '0.00';
+  }
+  return numPrice.toFixed(2);
 };
 
 const checkout = () => {
@@ -174,7 +190,7 @@ const handleImageError = (event) => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  background: linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
   color: white;
   box-shadow: 0 2px 8px rgba(233, 30, 99, 0.2);
 }
@@ -397,7 +413,7 @@ const handleImageError = (event) => {
 .checkout-btn {
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  background: linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
   color: white;
   border: none;
   border-radius: 12px;

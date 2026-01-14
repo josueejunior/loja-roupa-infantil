@@ -108,7 +108,7 @@ const cartStore = useCartStore();
     ),
     radial-gradient(circle at 10% 20%, rgba(252, 231, 243, 0.95) 0, transparent 45%),
     radial-gradient(circle at 90% 10%, rgba(255, 228, 230, 0.9) 0, transparent 45%),
-    linear-gradient(to bottom, #fff7fb 0%, #ffeaf3 35%, #ffe4f0 70%, #fde7f3 100%);
+    linear-gradient(to bottom, #ffffff 0%, #fffefb 30%, #fff5f8 60%, #ffffff 100%);
 }
 
 .about-container {
@@ -126,7 +126,7 @@ const cartStore = useCartStore();
 .about-header h1 {
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  background: linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

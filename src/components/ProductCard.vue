@@ -53,9 +53,9 @@
       </div>
       
       <div class="product-price">
-        <span class="current-price">R$ {{ product.price.toFixed(2) }}</span>
+        <span class="current-price">R$ {{ formatPrice(product.price) }}</span>
         <span v-if="product.originalPrice" class="original-price">
-          R$ {{ product.originalPrice.toFixed(2) }}
+          R$ {{ formatPrice(product.originalPrice) }}
         </span>
       </div>
       
@@ -86,7 +86,7 @@
               <img :src="product.image" :alt="product.name" class="modal-product-image" />
               <div>
                 <h3 class="modal-title">{{ product.name }}</h3>
-                <p class="modal-price">R$ {{ product.price.toFixed(2) }}</p>
+                <p class="modal-price">R$ {{ formatPrice(product.price) }}</p>
               </div>
             </div>
             <button class="close-modal" @click="closeModal" aria-label="Fechar">
@@ -224,6 +224,14 @@ const goToDetail = () => {
 const handleImageError = (event) => {
   event.target.src = 'https://via.placeholder.com/300x400/F3F4F6/9CA3AF?text=Imagem+Indisponível';
 };
+
+const formatPrice = (price) => {
+  const numPrice = Number(price);
+  if (Number.isNaN(numPrice) || !Number.isFinite(numPrice)) {
+    return '0.00';
+  }
+  return numPrice.toFixed(2);
+};
 </script>
 
 <style scoped>
@@ -244,7 +252,7 @@ const handleImageError = (event) => {
   position: absolute;
   inset: -2px;
   border-radius: 22px;
-  background: linear-gradient(135deg, #f472b6, #60a5fa, #fbbf24, #34d399, #a78bfa);
+  background: linear-gradient(135deg, #fce7f3, #fdf2f8, #fff5f8, #ffffff);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
@@ -300,7 +308,7 @@ const handleImageError = (event) => {
 }
 
 .badge.featured {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  background: linear-gradient(135deg, #fcd34d 0%, #fbbf24 100%);
   color: #fff;
   display: flex;
   align-items: center;
@@ -643,7 +651,7 @@ const handleImageError = (event) => {
 }
 
 .option-btn.active {
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  background: linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
   color: white;
   border-color: #e91e63;
   box-shadow: 0 2px 8px rgba(233, 30, 99, 0.3);
@@ -684,7 +692,7 @@ const handleImageError = (event) => {
 .confirm-btn {
   width: 100%;
   padding: 0.875rem 1.25rem;
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  background: linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
   color: white;
   border: none;
   border-radius: 10px;

@@ -389,7 +389,7 @@ onMounted(() => {
 
 <style scoped>
 .filters-sidebar {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 242, 242, 0.95) 50%, rgba(239, 246, 255, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 250, 240, 0.95) 50%, rgba(255, 255, 255, 0.98) 100%);
   /* Textura granulada + glassmorphism leve */
   background-image: 
     repeating-linear-gradient(
@@ -434,7 +434,7 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #fef2f2 0%, #fce4ec 50%, #e0f2fe 100%);
+  background: linear-gradient(135deg, #fff5f8 0%, #ffffff 30%, #fff5f8 70%, #fdf2f8 100%);
   position: relative;
 }
 
@@ -445,7 +445,7 @@ onMounted(() => {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #f472b6, #60a5fa, #fbbf24, #34d399);
+  background: linear-gradient(90deg, #fce7f3, #fdf2f8, #fff5f8, #ffffff);
   opacity: 0.6;
 }
 
@@ -506,7 +506,7 @@ onMounted(() => {
 }
 
 .filter-section-header:hover {
-  background: linear-gradient(135deg, #fef2f2 0%, #fce4ec 50%, #e0f2fe 100%);
+  background: linear-gradient(135deg, #fff5f8 0%, #ffffff 30%, #fff5f8 70%, #fdf2f8 100%);
   border-left-color: #ec4899;
   transform: translateX(2px);
 }
@@ -543,7 +543,7 @@ onMounted(() => {
 
 .filter-content {
   padding: 1.25rem 1.5rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 242, 242, 0.5) 50%, rgba(239, 246, 255, 0.5) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 250, 240, 0.9) 50%, rgba(255, 255, 255, 0.98) 100%);
   display: block;
   visibility: visible;
 }
@@ -813,7 +813,7 @@ onMounted(() => {
 .apply-price-btn {
   width: 100%;
   padding: 0.625rem;
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  background: linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
   color: white;
   border: none;
   border-radius: 6px;

@@ -146,7 +146,8 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
+import { RouterLink, useRoute } from 'vue-router';
 import { useCartStore } from '../stores/cart';
 import { products } from '../data/products';
 import IconCart from './icons/IconCart.vue';
@@ -157,12 +158,14 @@ import IconTruck from './icons/IconTruck.vue';
 import IconHome from './icons/IconHome.vue';
 import IconMenu from './icons/IconMenu.vue';
 import IconSearch from './icons/IconSearch.vue';
-import { ref } from 'vue';
-import { RouterLink, useRoute } from 'vue-router';
 
 const cartStore = useCartStore();
 const cartItemCount = cartStore.totalItems;
-const cartTotal = cartStore.totalPrice;
+const cartTotal = computed(() => {
+  const total = cartStore.totalPrice;
+  const numTotal = Number(total);
+  return Number.isNaN(numTotal) || !Number.isFinite(numTotal) ? 0 : numTotal;
+});
 const totalProducts = products.length;
 const isMobileMenuOpen = ref(false);
 const route = useRoute();
@@ -219,8 +222,8 @@ const closeMobileMenu = () => {
 
 /* Top Bar */
 .top-bar {
-  background: linear-gradient(135deg, #831843 0%, #9f1239 30%, #be185d 60%, #db2777 100%);
-  color: white;
+  background: linear-gradient(135deg, #fce7f3 0%, #fdf2f8 50%, #fce7f3 100%);
+  color: #1f2937;
   padding: 0.625rem 0;
   font-size: 0.875rem;
   display: block;
@@ -250,33 +253,29 @@ const closeMobileMenu = () => {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #ffffff;
+  color: #4b5563;
   font-weight: 500;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .top-bar-link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #ffffff;
+  color: #4b5563;
   text-decoration: none;
   transition: all 0.2s ease;
   font-weight: 500;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .top-bar-link:hover {
-  color: #fce7f3;
+  color: #e91e63;
   transform: translateY(-1px);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .top-icon {
   width: 16px;
   height: 16px;
-  color: #ffffff;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+  color: #6b7280;
   flex-shrink: 0;
 }
 
@@ -358,7 +357,7 @@ const closeMobileMenu = () => {
   font-weight: 800;
   margin: 0;
   letter-spacing: -0.5px;
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  background: linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -471,7 +470,7 @@ const closeMobileMenu = () => {
 }
 
 .cart-button {
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  background: linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
   color: white;
   border: none;
   padding: 0;
