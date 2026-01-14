@@ -214,9 +214,10 @@ const handleSubmit = () => {
 }
 
 .contact-subtitle {
-  font-size: 1.125rem;
-  color: #6b7280;
+  font-size: 1.25rem;
+  color: #4b5563;
   margin: 0;
+  font-weight: 500;
 }
 
 .contact-content {
@@ -235,10 +236,11 @@ const handleSubmit = () => {
 
 .contact-info h2,
 .contact-form-wrapper h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1f2937;
+  font-size: 1.625rem;
+  font-weight: 800;
+  color: #111827;
   margin: 0 0 1.5rem 0;
+  letter-spacing: -0.3px;
 }
 
 .info-cards {

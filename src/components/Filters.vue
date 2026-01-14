@@ -389,7 +389,7 @@ onMounted(() => {
 
 <style scoped>
 .filters-sidebar {
-  background: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 242, 242, 0.95) 50%, rgba(239, 246, 255, 0.95) 100%);
   /* Textura granulada + glassmorphism leve */
   background-image: 
     repeating-linear-gradient(
@@ -408,10 +408,10 @@ onMounted(() => {
     ),
     radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.06) 1px, transparent 0);
   background-size: 100% 100%, 100% 100%, 4px 4px;
-  border-radius: 20px;
-  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(233, 30, 99, 0.15), 0 4px 16px rgba(59, 130, 246, 0.1), 0 2px 8px rgba(251, 191, 36, 0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 182, 193, 0.3);
   height: fit-content;
   position: sticky;
   top: 24px;
@@ -423,32 +423,48 @@ onMounted(() => {
 }
 
 .filters-sidebar:hover {
-  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.15), 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 16px 48px rgba(233, 30, 99, 0.2), 0 8px 24px rgba(59, 130, 246, 0.15), 0 4px 12px rgba(251, 191, 36, 0.15);
+  border-color: rgba(236, 72, 153, 0.5);
+  transform: translateY(-2px);
 }
 
 .filters-header {
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 1.5rem 1.75rem;
+  border-bottom: 2px solid rgba(255, 182, 193, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fafafa;
+  background: linear-gradient(135deg, #fef2f2 0%, #fce4ec 50%, #e0f2fe 100%);
+  position: relative;
+}
+
+.filters-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #f472b6, #60a5fa, #fbbf24, #34d399);
+  opacity: 0.6;
 }
 
 .filters-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111827;
   margin: 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  letter-spacing: -0.3px;
 }
 
 .title-icon {
-  width: 18px;
-  height: 18px;
-  color: #e91e63;
+  width: 20px;
+  height: 20px;
+  color: #ec4899;
+  filter: drop-shadow(0 2px 4px rgba(236, 72, 153, 0.3));
 }
 
 .clear-all-btn {
@@ -477,34 +493,38 @@ onMounted(() => {
 
 .filter-section-header {
   width: 100%;
-  padding: 1rem 1.5rem;
-  background: white;
+  padding: 1.125rem 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(254, 242, 242, 0.7) 100%);
   border: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
   text-align: left;
+  border-left: 3px solid transparent;
 }
 
 .filter-section-header:hover {
-  background: #f9fafb;
+  background: linear-gradient(135deg, #fef2f2 0%, #fce4ec 50%, #e0f2fe 100%);
+  border-left-color: #ec4899;
+  transform: translateX(2px);
 }
 
 .section-title {
   display: flex;
   align-items: center;
   gap: 0.625rem;
-  font-weight: 600;
-  color: #374151;
+  font-weight: 700;
+  color: #1f2937;
   font-size: 0.9375rem;
 }
 
 .section-icon {
-  width: 16px;
-  height: 16px;
-  color: #6b7280;
+  width: 18px;
+  height: 18px;
+  color: #ec4899;
+  filter: drop-shadow(0 1px 2px rgba(236, 72, 153, 0.2));
 }
 
 .filter-count {
@@ -522,8 +542,8 @@ onMounted(() => {
 }
 
 .filter-content {
-  padding: 1rem 1.5rem;
-  background: #fafafa;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 242, 242, 0.5) 50%, rgba(239, 246, 255, 0.5) 100%);
   display: block;
   visibility: visible;
 }
@@ -556,7 +576,7 @@ onMounted(() => {
 .filter-options {
   display: flex;
   flex-direction: column;
-  gap: 0.375rem;
+  gap: 0.25rem;
   max-height: 280px;
   overflow-y: auto;
   padding-right: 0.25rem;
@@ -584,18 +604,18 @@ onMounted(() => {
   align-items: center;
   gap: 0.625rem;
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 6px;
+  padding: 0.4rem 0.5rem;
+  border-radius: 999px;
   transition: background 0.2s ease;
 }
 
 .filter-item:hover {
-  background: white;
+  background: #ffffff;
 }
 
 .filter-checkbox-input {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   cursor: pointer;
   accent-color: #e91e63;
   flex-shrink: 0;
@@ -606,6 +626,9 @@ onMounted(() => {
   color: #4b5563;
   user-select: none;
   flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .item-count {
@@ -635,14 +658,17 @@ onMounted(() => {
 }
 
 .color-swatch-item:hover {
-  border-color: #e91e63;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.15);
+  border-color: #ec4899;
+  border-width: 3px;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3), 0 2px 6px rgba(59, 130, 246, 0.2);
 }
 
 .color-swatch-item.active {
-  border-color: #e91e63;
-  background: #fce4ec;
+  border-color: #ec4899;
+  border-width: 3px;
+  background: linear-gradient(135deg, #fce4ec 0%, #e0f2fe 100%);
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4);
 }
 
 .color-checkbox {
@@ -704,15 +730,19 @@ onMounted(() => {
 }
 
 .size-button:hover {
-  border-color: #e91e63;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.15);
+  border-color: #ec4899;
+  border-width: 3px;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3), 0 2px 6px rgba(59, 130, 246, 0.2);
 }
 
 .size-button.active {
-  border-color: #e91e63;
-  background: #fce4ec;
-  color: #e91e63;
+  border-color: #ec4899;
+  border-width: 3px;
+  background: linear-gradient(135deg, #fce4ec 0%, #e0f2fe 100%);
+  color: #c2185b;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4);
 }
 
 .size-checkbox {
@@ -824,20 +854,22 @@ onMounted(() => {
 
 .apply-filters-btn {
   width: 100%;
-  padding: 0.625rem;
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 50%, #be185d 100%);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 0.8125rem;
-  transition: all 0.2s ease;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4);
+  letter-spacing: 0.3px;
 }
 
 .apply-filters-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(233, 30, 99, 0.3);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5), 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
 .clear-filters-btn {

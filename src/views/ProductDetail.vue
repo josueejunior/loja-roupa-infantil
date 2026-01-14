@@ -359,9 +359,12 @@ const addToCart = () => {
 }
 
 .detail-category {
-  font-size: 0.875rem;
-  color: #6b7280;
+  font-size: 0.9375rem;
+  color: #4b5563;
   margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .detail-price {
@@ -384,9 +387,10 @@ const addToCart = () => {
 }
 
 .detail-description {
-  font-size: 0.9375rem;
-  color: #4b5563;
-  line-height: 1.6;
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .detail-options {

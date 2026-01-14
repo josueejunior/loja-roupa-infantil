@@ -217,11 +217,13 @@ const closeMobileMenu = () => {
 
 /* Top Bar */
 .top-bar {
-  background: linear-gradient(135deg, #f472b6 0%, #ec4899 35%, #db2777 100%);
+  background: linear-gradient(135deg, #831843 0%, #9f1239 30%, #be185d 60%, #db2777 100%);
   color: white;
-  padding: 0.5rem 0;
-  font-size: 0.8125rem;
+  padding: 0.625rem 0;
+  font-size: 0.875rem;
   display: block;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .top-bar-content {
@@ -246,30 +248,40 @@ const closeMobileMenu = () => {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: #ffffff;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .top-bar-link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: white;
+  color: #ffffff;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .top-bar-link:hover {
-  opacity: 0.8;
+  color: #fce7f3;
+  transform: translateY(-1px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .top-icon {
-  width: 14px;
-  height: 14px;
-  opacity: 0.9;
+  width: 16px;
+  height: 16px;
+  color: #ffffff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+  flex-shrink: 0;
 }
 
 .top-bar-divider {
-  opacity: 0.5;
-  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.6;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
 }
 
 /* Main Header */
@@ -335,10 +347,11 @@ const closeMobileMenu = () => {
 }
 
 .tagline {
-  font-size: 0.8125rem;
-  color: #6b7280;
+  font-size: 0.875rem;
+  color: #4b5563;
   margin: 0;
   margin-top: 0.125rem;
+  font-weight: 500;
 }
 
 /* Search Bar */
@@ -392,7 +405,7 @@ const closeMobileMenu = () => {
   align-items: center;
   gap: 0.5rem;
   padding: 0.625rem 1.1rem;
-  color: #374151;
+  color: #1f2937;
   text-decoration: none;
   border-radius: 12px;
   font-weight: 600;
@@ -402,13 +415,17 @@ const closeMobileMenu = () => {
 }
 
 .nav-link:hover {
-  background: #f3f4f6;
-  color: #e91e63;
+  background: linear-gradient(135deg, #fef2f2 0%, #fce4ec 100%);
+  color: #c2185b;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.15);
 }
 
 .nav-link.active {
-  color: #e91e63;
-  background: #fce4ec;
+  color: #c2185b;
+  background: linear-gradient(135deg, #fce4ec 0%, #fdf2f8 100%);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.2);
 }
 
 .nav-link.active::after {

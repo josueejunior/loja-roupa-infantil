@@ -134,9 +134,10 @@ const cartStore = useCartStore();
 }
 
 .about-subtitle {
-  font-size: 1.125rem;
-  color: #6b7280;
+  font-size: 1.25rem;
+  color: #4b5563;
   margin: 0;
+  font-weight: 500;
 }
 
 .about-content {
@@ -153,17 +154,19 @@ const cartStore = useCartStore();
 }
 
 .about-section h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #1f2937;
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #111827;
   margin: 0 0 1.5rem 0;
+  letter-spacing: -0.5px;
 }
 
 .about-section p {
-  font-size: 1rem;
-  color: #4b5563;
-  line-height: 1.7;
+  font-size: 1.0625rem;
+  color: #374151;
+  line-height: 1.8;
   margin: 0 0 1rem 0;
+  font-weight: 400;
 }
 
 .values-grid {

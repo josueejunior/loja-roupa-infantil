@@ -229,25 +229,29 @@ import IconTruck from './icons/IconTruck.vue';
 }
 
 .footer-contact li a:hover {
-  color: #e91e63;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.75rem 2rem;
   text-align: center;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.15);
+  position: relative;
 }
 
 .footer-bottom p {
-  margin: 0.25rem 0;
-  color: #9ca3af;
-  font-size: 0.875rem;
+  margin: 0.375rem 0;
+  color: #fce7f3;
+  font-size: 0.9375rem;
+  font-weight: 500;
 }
 
 .footer-cnpj {
-  font-size: 0.75rem !important;
-  color: #6b7280 !important;
+  font-size: 0.8125rem !important;
+  color: #f9a8d4 !important;
+  font-weight: 400 !important;
 }
 
 @media (max-width: 768px) {

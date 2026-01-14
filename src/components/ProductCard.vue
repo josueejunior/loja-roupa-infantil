@@ -221,17 +221,35 @@ const handleImageError = (event) => {
 <style scoped>
 .product-card {
   background: white;
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.15), 0 4px 12px rgba(59, 130, 246, 0.1), 0 2px 6px rgba(251, 191, 36, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  border: 2px solid rgba(255, 182, 193, 0.3);
+  position: relative;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #f472b6, #60a5fa, #fbbf24, #34d399, #a78bfa);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(233, 30, 99, 0.25), 0 6px 16px rgba(59, 130, 246, 0.15), 0 4px 8px rgba(251, 191, 36, 0.15);
+}
+
+.product-card:hover::before {
+  opacity: 0.6;
 }
 
 .product-card.out-of-stock {
@@ -274,11 +292,13 @@ const handleImageError = (event) => {
 }
 
 .badge.featured {
-  background: #FFD700;
-  color: #333;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #fff;
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
+  font-weight: 700;
 }
 
 .badge-icon {
@@ -287,7 +307,9 @@ const handleImageError = (event) => {
 }
 
 .badge.discount {
-  background: #e91e63;
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+  box-shadow: 0 2px 8px rgba(236, 72, 153, 0.4);
+  font-weight: 700;
 }
 
 .badge.out-of-stock-badge {

@@ -289,32 +289,39 @@ const clearAllFilters = () => {
 .app {
   min-height: 100vh;
   position: relative;
-  /* Fundo com textura granulada e detalhes infantis em tom rosa */
+  /* Fundo colorido e alegre com cara de crianças */
   background:
-    /* Textura granulada usando múltiplas camadas de ruído */
+    /* Textura granulada suave */
     repeating-linear-gradient(
       0deg,
-      rgba(0, 0, 0, 0.02) 0px,
+      rgba(0, 0, 0, 0.015) 0px,
       transparent 1px,
       transparent 2px,
-      rgba(0, 0, 0, 0.02) 3px
+      rgba(0, 0, 0, 0.015) 3px
     ),
     repeating-linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.02) 0px,
+      rgba(0, 0, 0, 0.015) 0px,
       transparent 1px,
       transparent 2px,
-      rgba(0, 0, 0, 0.02) 3px
+      rgba(0, 0, 0, 0.015) 3px
     ),
     /* Efeito de ruído pontilhado */
-    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.12) 1px, transparent 0),
-    /* Detalhes infantis em tons de rosa */
-    radial-gradient(circle at 10% 20%, rgba(252, 231, 243, 0.95) 0, transparent 45%),
-    radial-gradient(circle at 90% 10%, rgba(255, 228, 230, 0.9) 0, transparent 45%),
-    radial-gradient(circle at 0% 80%, rgba(255, 213, 230, 0.9) 0, transparent 50%),
-    radial-gradient(circle at 85% 85%, rgba(252, 207, 238, 0.9) 0, transparent 45%),
-    /* Base gradiente suave em rosa bem claro */
-    linear-gradient(to bottom, #fff7fb 0%, #ffeaf3 35%, #ffe4f0 70%, #fde7f3 100%);
+    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.08) 1px, transparent 0),
+    /* Círculos coloridos vibrantes - Rosa */
+    radial-gradient(circle at 15% 25%, rgba(255, 182, 193, 0.4) 0, transparent 50%),
+    /* Azul claro */
+    radial-gradient(circle at 85% 15%, rgba(173, 216, 230, 0.4) 0, transparent 50%),
+    /* Amarelo */
+    radial-gradient(circle at 5% 75%, rgba(255, 228, 181, 0.45) 0, transparent 55%),
+    /* Verde claro */
+    radial-gradient(circle at 95% 80%, rgba(152, 251, 152, 0.4) 0, transparent 50%),
+    /* Roxo/Lavanda */
+    radial-gradient(circle at 50% 10%, rgba(221, 160, 221, 0.35) 0, transparent 45%),
+    /* Laranja claro */
+    radial-gradient(circle at 70% 60%, rgba(255, 218, 185, 0.35) 0, transparent 50%),
+    /* Base gradiente colorido alegre */
+    linear-gradient(135deg, #fff0f5 0%, #ffe4e6 20%, #e0f2fe 40%, #f0f9ff 60%, #fef3c7 80%, #fce7f3 100%);
   background-size: 
     100% 100%,
     100% 100%,
@@ -347,20 +354,22 @@ const clearAllFilters = () => {
   margin-bottom: 2rem;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1.75rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 242, 242, 0.8) 50%, rgba(239, 246, 255, 0.8) 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.12), 0 4px 12px rgba(59, 130, 246, 0.1), 0 2px 6px rgba(251, 191, 36, 0.1);
+  border: 2px solid rgba(255, 182, 193, 0.3);
 }
 
 .products-header h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #1f2937;
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #111827;
   margin: 0;
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  letter-spacing: -0.5px;
 }
 
 .header-left {
@@ -371,16 +380,17 @@ const clearAllFilters = () => {
 
 .products-header h2::before {
   content: '';
-  width: 4px;
-  height: 24px;
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
-  border-radius: 2px;
+  width: 5px;
+  height: 28px;
+  background: linear-gradient(135deg, #f472b6 0%, #60a5fa 50%, #fbbf24 100%);
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(244, 114, 182, 0.4);
 }
 
 .products-count {
-  font-size: 0.875rem;
-  color: #6b7280;
-  font-weight: 500;
+  font-size: 0.9375rem;
+  color: #4b5563;
+  font-weight: 600;
 }
 
 .sort-controls {
@@ -390,22 +400,23 @@ const clearAllFilters = () => {
 }
 
 .sort-controls label {
-  font-weight: 600;
-  color: #6b7280;
-  font-size: 0.875rem;
+  font-weight: 700;
+  color: #374151;
+  font-size: 0.9375rem;
 }
 
 .sort-select {
-  padding: 0.625rem 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
+  padding: 0.75rem 1.125rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
   background: white;
   cursor: pointer;
-  font-size: 0.875rem;
-  color: #374151;
-  font-weight: 500;
+  font-size: 0.9375rem;
+  color: #1f2937;
+  font-weight: 600;
   transition: all 0.2s ease;
   min-width: 200px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .sort-select:hover {
@@ -447,9 +458,10 @@ const clearAllFilters = () => {
 }
 
 .no-products p {
-  color: #6b7280;
+  color: #374151;
   font-size: 1.125rem;
   margin: 0;
+  font-weight: 500;
 }
 
 .clear-filters-link {
