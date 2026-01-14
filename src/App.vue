@@ -85,7 +85,7 @@
       </div>
     </div>
     
-    <ShoppingCart :is-open="cartStore.isCartOpen" @close="cartStore.closeCart" />
+    <ShoppingCart :is-open="cartStore.isCartOpen.value" @close="cartStore.closeCart" />
     
     <Footer />
     
