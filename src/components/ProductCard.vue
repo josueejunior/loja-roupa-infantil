@@ -78,8 +78,9 @@
     </div>
     
     <!-- Modal para seleção de tamanho e cor -->
-    <div v-if="showSizeColorModal" class="modal-overlay" @click="closeModal">
-      <div class="modal-content" @click.stop>
+    <Teleport to="body">
+      <div v-if="showSizeColorModal" class="modal-overlay" @click.self="closeModal">
+        <div class="modal-content" @click.stop>
           <div class="modal-header">
             <div class="modal-product-info">
               <img :src="product.image" :alt="product.name" class="modal-product-image" />
@@ -150,8 +151,9 @@
               Selecione o tamanho e a cor para continuar
             </p>
           </div>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </div>
 </template>
 
@@ -477,8 +479,19 @@ const handleImageError = (event) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 10000;
   padding: 1rem;
+  pointer-events: auto;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modal-content {
@@ -491,6 +504,20 @@ const handleImageError = (event) => {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
+  pointer-events: auto;
+  position: relative;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .modal-header {
