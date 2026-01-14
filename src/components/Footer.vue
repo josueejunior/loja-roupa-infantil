@@ -74,10 +74,30 @@ import IconTruck from './icons/IconTruck.vue';
 
 <style scoped>
 .footer {
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  background: linear-gradient(135deg, #831843 0%, #9f1239 30%, #be185d 60%, #db2777 100%);
   color: white;
   margin-top: 4rem;
   padding-top: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      transparent 1px,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 3px
+    );
+  pointer-events: none;
 }
 
 .footer-content {
@@ -97,20 +117,20 @@ import IconTruck from './icons/IconTruck.vue';
 }
 
 .footer-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.75rem;
+  font-weight: 800;
   margin: 0;
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: -0.5px;
 }
 
 .footer-description {
-  color: #d1d5db;
-  font-size: 0.875rem;
-  line-height: 1.6;
+  color: #fce7f3;
+  font-size: 0.9375rem;
+  line-height: 1.7;
   margin: 0;
+  font-weight: 400;
 }
 
 .social-links {
@@ -144,9 +164,11 @@ import IconTruck from './icons/IconTruck.vue';
 
 .footer-subtitle {
   font-size: 1.125rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem 0;
-  color: white;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.3px;
 }
 
 .footer-links {
@@ -159,14 +181,18 @@ import IconTruck from './icons/IconTruck.vue';
 }
 
 .footer-links li a {
-  color: #d1d5db;
+  color: #fce7f3;
   text-decoration: none;
-  font-size: 0.875rem;
-  transition: color 0.2s ease;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  display: inline-block;
 }
 
 .footer-links li a:hover {
-  color: #e91e63;
+  color: #ffffff;
+  transform: translateX(4px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .footer-contact {
@@ -182,21 +208,24 @@ import IconTruck from './icons/IconTruck.vue';
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: #d1d5db;
-  font-size: 0.875rem;
+  color: #fce7f3;
+  font-size: 0.9375rem;
+  font-weight: 500;
 }
 
 .contact-icon {
-  width: 18px;
-  height: 18px;
-  color: #e91e63;
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
   flex-shrink: 0;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 .footer-contact li a {
-  color: #d1d5db;
+  color: #fce7f3;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  font-weight: 500;
 }
 
 .footer-contact li a:hover {

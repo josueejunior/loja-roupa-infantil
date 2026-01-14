@@ -289,32 +289,32 @@ const clearAllFilters = () => {
 .app {
   min-height: 100vh;
   position: relative;
-  /* Fundo com textura granulada e detalhes infantis */
+  /* Fundo com textura granulada e detalhes infantis em tom rosa */
   background:
     /* Textura granulada usando múltiplas camadas de ruído */
     repeating-linear-gradient(
       0deg,
-      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.02) 0px,
       transparent 1px,
       transparent 2px,
-      rgba(0, 0, 0, 0.03) 3px
+      rgba(0, 0, 0, 0.02) 3px
     ),
     repeating-linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.02) 0px,
       transparent 1px,
       transparent 2px,
-      rgba(0, 0, 0, 0.03) 3px
+      rgba(0, 0, 0, 0.02) 3px
     ),
     /* Efeito de ruído pontilhado */
-    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.15) 1px, transparent 0),
-    /* Detalhes infantis em tons pastéis */
-    radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.25) 0, transparent 45%),
-    radial-gradient(circle at 90% 10%, rgba(173, 216, 230, 0.25) 0, transparent 45%),
-    radial-gradient(circle at 0% 80%, rgba(255, 228, 181, 0.3) 0, transparent 50%),
-    radial-gradient(circle at 85% 85%, rgba(221, 160, 221, 0.25) 0, transparent 45%),
-    /* Base gradiente suave */
-    linear-gradient(to bottom, #f9fafb 0%, #f3f4f6 100%);
+    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.12) 1px, transparent 0),
+    /* Detalhes infantis em tons de rosa */
+    radial-gradient(circle at 10% 20%, rgba(252, 231, 243, 0.95) 0, transparent 45%),
+    radial-gradient(circle at 90% 10%, rgba(255, 228, 230, 0.9) 0, transparent 45%),
+    radial-gradient(circle at 0% 80%, rgba(255, 213, 230, 0.9) 0, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(252, 207, 238, 0.9) 0, transparent 45%),
+    /* Base gradiente suave em rosa bem claro */
+    linear-gradient(to bottom, #fff7fb 0%, #ffeaf3 35%, #ffe4f0 70%, #fde7f3 100%);
   background-size: 
     100% 100%,
     100% 100%,

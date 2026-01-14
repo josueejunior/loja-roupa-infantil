@@ -217,7 +217,7 @@ const closeMobileMenu = () => {
 
 /* Top Bar */
 .top-bar {
-  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  background: linear-gradient(135deg, #f472b6 0%, #ec4899 35%, #db2777 100%);
   color: white;
   padding: 0.5rem 0;
   font-size: 0.8125rem;

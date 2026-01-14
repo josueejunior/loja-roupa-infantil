@@ -229,11 +229,11 @@ const addToCart = () => {
       rgba(0, 0, 0, 0.03) 3px
     ),
     radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.15) 1px, transparent 0),
-    radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.25) 0, transparent 45%),
-    radial-gradient(circle at 90% 10%, rgba(173, 216, 230, 0.25) 0, transparent 45%),
-    radial-gradient(circle at 0% 80%, rgba(255, 228, 181, 0.3) 0, transparent 50%),
-    radial-gradient(circle at 85% 85%, rgba(221, 160, 221, 0.25) 0, transparent 45%),
-    linear-gradient(to bottom, #f9fafb 0%, #f3f4f6 100%);
+    radial-gradient(circle at 10% 20%, rgba(252, 231, 243, 0.95) 0, transparent 45%),
+    radial-gradient(circle at 90% 10%, rgba(255, 228, 230, 0.9) 0, transparent 45%),
+    radial-gradient(circle at 0% 80%, rgba(255, 213, 230, 0.9) 0, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(252, 207, 238, 0.9) 0, transparent 45%),
+    linear-gradient(to bottom, #fff7fb 0%, #ffeaf3 35%, #ffe4f0 70%, #fde7f3 100%);
   background-size:
     100% 100%,
     100% 100%,

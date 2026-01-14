@@ -106,9 +106,9 @@ const cartStore = useCartStore();
       transparent 2px,
       rgba(0, 0, 0, 0.03) 3px
     ),
-    radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.25) 0, transparent 45%),
-    radial-gradient(circle at 90% 10%, rgba(173, 216, 230, 0.25) 0, transparent 45%),
-    linear-gradient(to bottom, #f9fafb 0%, #f3f4f6 100%);
+    radial-gradient(circle at 10% 20%, rgba(252, 231, 243, 0.95) 0, transparent 45%),
+    radial-gradient(circle at 90% 10%, rgba(255, 228, 230, 0.9) 0, transparent 45%),
+    linear-gradient(to bottom, #fff7fb 0%, #ffeaf3 35%, #ffe4f0 70%, #fde7f3 100%);
 }
 
 .about-container {
