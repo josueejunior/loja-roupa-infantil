@@ -1,7 +1,6 @@
 <template>
   <div class="app">
     <Header 
-      @toggle-cart="isCartOpen = !isCartOpen" 
       @search="handleSearch"
       :search-query="searchQuery"
     />
@@ -86,7 +85,7 @@
       </div>
     </div>
     
-    <ShoppingCart :is-open="isCartOpen" @close="isCartOpen = false" />
+    <ShoppingCart :is-open="cartStore.isCartOpen" @close="cartStore.closeCart" />
     
     <Footer />
     
@@ -113,8 +112,9 @@ import ShoppingCart from './components/ShoppingCart.vue';
 import Footer from './components/Footer.vue';
 import WhatsAppButton from './components/WhatsAppButton.vue';
 import { products } from './data/products';
+import { useCartStore } from './stores/cart';
 
-const isCartOpen = ref(false);
+const cartStore = useCartStore();
 const showCartMessage = ref(false);
 const sortBy = ref('newest');
 const currentPage = ref(1);

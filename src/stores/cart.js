@@ -1,6 +1,7 @@
 import { ref, computed } from 'vue';
 
 const cart = ref([]);
+const isCartOpen = ref(false);
 
 export function useCartStore() {
   const addToCart = (product, selectedSize, selectedColor) => {
@@ -38,6 +39,18 @@ export function useCartStore() {
     cart.value = [];
   };
 
+  const openCart = () => {
+    isCartOpen.value = true;
+  };
+
+  const closeCart = () => {
+    isCartOpen.value = false;
+  };
+
+  const toggleCart = () => {
+    isCartOpen.value = !isCartOpen.value;
+  };
+
   const totalItems = computed(() => {
     return cart.value.reduce((sum, item) => sum + item.quantity, 0);
   });
@@ -48,10 +61,14 @@ export function useCartStore() {
 
   return {
     cart,
+    isCartOpen,
     addToCart,
     removeFromCart,
     updateQuantity,
     clearCart,
+    openCart,
+    closeCart,
+    toggleCart,
     totalItems,
     totalPrice
   };

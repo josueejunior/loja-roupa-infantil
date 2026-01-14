@@ -165,7 +165,7 @@ const totalProducts = products.length;
 const isMobileMenuOpen = ref(false);
 const route = useRoute();
 
-const emit = defineEmits(['toggle-cart', 'search']);
+const emit = defineEmits(['search']);
 
 const props = defineProps({
   searchQuery: {
@@ -175,7 +175,7 @@ const props = defineProps({
 });
 
 const toggleCart = () => {
-  emit('toggle-cart');
+  cartStore.toggleCart();
 };
 
 const toggleMobileMenu = () => {

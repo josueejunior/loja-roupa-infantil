@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Header @toggle-cart="isCartOpen = !isCartOpen" />
+    <Header />
     
     <main class="about-main">
       <div class="about-container">
@@ -71,20 +71,20 @@
       </div>
     </main>
 
-    <ShoppingCart :is-open="isCartOpen" @close="isCartOpen = false" />
+    <ShoppingCart :is-open="cartStore.isCartOpen" @close="cartStore.closeCart" />
     <Footer />
     <WhatsAppButton />
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 import WhatsAppButton from '../components/WhatsAppButton.vue';
 import ShoppingCart from '../components/ShoppingCart.vue';
+import { useCartStore } from '../stores/cart';
 
-const isCartOpen = ref(false);
+const cartStore = useCartStore();
 </script>
 
 <style scoped>

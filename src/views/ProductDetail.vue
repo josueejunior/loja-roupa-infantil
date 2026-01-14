@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Header @toggle-cart="isCartOpen = !isCartOpen" />
+    <Header />
 
     <main class="detail-main">
       <div class="detail-container" v-if="product">
@@ -140,7 +140,7 @@
       </div>
     </main>
 
-    <ShoppingCart :is-open="isCartOpen" @close="isCartOpen = false" />
+    <ShoppingCart :is-open="cartStore.isCartOpen" @close="cartStore.closeCart" />
     <Footer />
     <WhatsAppButton />
   </div>
@@ -160,8 +160,6 @@ import { useCartStore } from '../stores/cart';
 
 const route = useRoute();
 const cartStore = useCartStore();
-
-const isCartOpen = ref(false);
 const selectedSize = ref('');
 const selectedColor = ref('');
 
@@ -206,7 +204,7 @@ const handleImageError = (event) => {
 const addToCart = () => {
   if (product.value && selectedSize.value && selectedColor.value) {
     cartStore.addToCart(product.value, selectedSize.value, selectedColor.value);
-    isCartOpen.value = true;
+    cartStore.openCart();
   }
 };
 </script>
