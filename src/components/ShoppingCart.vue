@@ -155,17 +155,28 @@ const handleImageError = (event) => {
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15), -2px 0 12px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .cart-header {
-  padding: 1.5rem;
-  border-bottom: 1px solid #eee;
+  padding: 1.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
   color: white;
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.2);
 }
 
 .cart-header h2 {
@@ -231,9 +242,16 @@ const handleImageError = (event) => {
 .cart-item {
   display: flex;
   gap: 1rem;
-  padding: 1rem;
-  background: #f9f9f9;
-  border-radius: 8px;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  transition: all 0.2s ease;
+}
+
+.cart-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
 }
 
 .cart-item-image {
@@ -378,15 +396,17 @@ const handleImageError = (event) => {
 
 .checkout-btn {
   width: 100%;
-  padding: 0.875rem;
+  padding: 1rem;
   background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
   color: white;
   border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.9375rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.4);
+  letter-spacing: 0.5px;
 }
 
 .checkout-btn:hover:not(:disabled) {

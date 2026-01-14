@@ -22,23 +22,25 @@
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 60px;
-  height: 60px;
-  background: #25d366;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5), 0 2px 8px rgba(37, 211, 102, 0.3);
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   animation: pulse 2s infinite;
+  border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 .whatsapp-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  transform: scale(1.12) translateY(-2px);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.6), 0 4px 12px rgba(37, 211, 102, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .whatsapp-icon {
@@ -77,10 +79,10 @@
 
 @keyframes pulse {
   0%, 100% {
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5), 0 2px 8px rgba(37, 211, 102, 0.3);
   }
   50% {
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6);
+    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.7), 0 4px 12px rgba(37, 211, 102, 0.5);
   }
 }
 

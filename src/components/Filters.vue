@@ -408,10 +408,10 @@ onMounted(() => {
     ),
     radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.06) 1px, transparent 0);
   background-size: 100% 100%, 100% 100%, 4px 4px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   height: fit-content;
   position: sticky;
   top: 24px;
@@ -419,6 +419,11 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   margin-right: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.filters-sidebar:hover {
+  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.15), 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .filters-header {

@@ -476,39 +476,43 @@ const clearAllFilters = () => {
   align-items: center;
   gap: 0.5rem;
   margin-top: 3rem;
-  padding: 1.5rem;
+  padding: 1.75rem;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(229, 231, 235, 0.8);
 }
 
 .page-btn {
-  padding: 0.625rem 1rem;
-  border: 1px solid #e5e7eb;
+  padding: 0.75rem 1.125rem;
+  border: 1.5px solid #e5e7eb;
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-weight: 500;
+  font-weight: 600;
   color: #6b7280;
-  min-width: 40px;
+  min-width: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .page-btn:hover:not(:disabled):not(.ellipsis) {
-  background: #f9fafb;
+  background: linear-gradient(135deg, #fef2f2 0%, #fce4ec 100%);
   border-color: #e91e63;
   color: #e91e63;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.2);
 }
 
 .page-btn.active {
   background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
   color: white;
   border-color: transparent;
-  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.3);
+  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.4);
+  transform: scale(1.05);
 }
 
 .page-btn:disabled {

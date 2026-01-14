@@ -221,9 +221,9 @@ const handleImageError = (event) => {
 <style scoped>
 .product-card {
   background: white;
-  border-radius: 12px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -380,8 +380,10 @@ const handleImageError = (event) => {
 
 .add-to-cart-btn {
   width: 100%;
-  padding: 0.7rem;
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  padding: 0.75rem 1rem;
+  background: radial-gradient(circle at 0 0, #ffe4f1 0, transparent 55%),
+              radial-gradient(circle at 100% 0, #ffd9f2 0, transparent 55%),
+              linear-gradient(135deg, #f9739b 0%, #ec4899 45%, #db2777 100%);
   color: white;
   border: none;
   border-radius: 999px;
