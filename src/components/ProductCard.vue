@@ -78,9 +78,8 @@
     </div>
     
     <!-- Modal para seleção de tamanho e cor -->
-    <Transition name="modal">
-      <div v-if="showSizeColorModal" class="modal-overlay" @click="showSizeColorModal = false">
-        <div class="modal-content" @click.stop>
+    <div v-if="showSizeColorModal" class="modal-overlay" @click="closeModal">
+      <div class="modal-content" @click.stop>
           <div class="modal-header">
             <div class="modal-product-info">
               <img :src="product.image" :alt="product.name" class="modal-product-image" />
@@ -89,7 +88,7 @@
                 <p class="modal-price">R$ {{ product.price.toFixed(2) }}</p>
               </div>
             </div>
-            <button class="close-modal" @click="showSizeColorModal = false" aria-label="Fechar">
+            <button class="close-modal" @click="closeModal" aria-label="Fechar">
               <IconClose />
             </button>
           </div>
@@ -141,7 +140,7 @@
           <div class="modal-footer">
             <button 
               class="confirm-btn"
-              @click="addToCart"
+              @click="handleConfirmAddToCart"
               :disabled="!selectedSize || !selectedColor"
             >
               <IconShopping class="btn-icon" />
@@ -151,9 +150,8 @@
               Selecione o tamanho e a cor para continuar
             </p>
           </div>
-        </div>
       </div>
-    </Transition>
+    </div>
   </div>
 </template>
 
@@ -199,14 +197,22 @@ const getColorCode = (color) => {
   return colorMap[color] || '#CCCCCC';
 };
 
+const closeModal = () => {
+  showSizeColorModal.value = false;
+};
+
 const addToCart = () => {
   if (selectedSize.value && selectedColor.value) {
     cartStore.addToCart(props.product, selectedSize.value, selectedColor.value);
     emit('added-to-cart');
-    showSizeColorModal.value = false;
     selectedSize.value = '';
     selectedColor.value = '';
   }
+};
+
+const handleConfirmAddToCart = () => {
+  addToCart();
+  closeModal();
 };
 
 const goToDetail = () => {
@@ -683,50 +689,6 @@ const handleImageError = (event) => {
   font-size: 0.8125rem;
   color: #9ca3af;
   text-align: center;
-}
-
-/* Modal Animations */
-.modal-enter-active {
-  transition: opacity 0.3s ease;
-}
-
-.modal-leave-active {
-  transition: opacity 0.2s ease;
-}
-
-.modal-enter-from,
-.modal-leave-to {
-  opacity: 0;
-}
-
-.modal-enter-active .modal-content {
-  animation: modalSlideIn 0.3s ease;
-}
-
-.modal-leave-active .modal-content {
-  animation: modalSlideOut 0.2s ease;
-}
-
-@keyframes modalSlideIn {
-  from {
-    transform: translateY(-20px) scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes modalSlideOut {
-  from {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-20px) scale(0.95);
-    opacity: 0;
-  }
 }
 
 /* Responsividade */
