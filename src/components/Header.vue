@@ -33,7 +33,9 @@
       <div class="header-container">
         <div class="logo-section">
           <div class="logo-wrapper">
-            <div class="logo-icon">👗</div>
+            <div class="logo-icon">
+              <span class="logo-badge">LI</span>
+            </div>
             <div>
               <h1 class="logo">Loja Infantil</h1>
               <p class="tagline">Roupas cheias de charme para crianças</p>
@@ -331,8 +333,24 @@ const closeMobileMenu = () => {
 }
 
 .logo-icon {
-  font-size: 2rem;
-  line-height: 1;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.35) 0, transparent 55%),
+    linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(236, 72, 153, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.logo-badge {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
 }
 
 .logo {

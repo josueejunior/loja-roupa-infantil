@@ -2,7 +2,10 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-section">
-        <h3 class="footer-title">Loja Infantil</h3>
+        <div class="footer-title-wrapper">
+          <div class="footer-logo-badge">LI</div>
+          <h3 class="footer-title">Loja Infantil</h3>
+        </div>
         <p class="footer-description">
           Roupas cheias de charme para crianças. Qualidade e estilo em cada peça.
         </p>
@@ -114,6 +117,30 @@ import IconTruck from './icons/IconTruck.vue';
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.footer-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-logo-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.35) 0, transparent 55%),
+    linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(236, 72, 153, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
 }
 
 .footer-title {

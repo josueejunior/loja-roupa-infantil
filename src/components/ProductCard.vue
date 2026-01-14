@@ -402,15 +402,16 @@ const handleImageError = (event) => {
 
 .add-to-cart-btn {
   width: 100%;
-  padding: 0.75rem 1rem;
-  background: radial-gradient(circle at 0 0, #ffe4f1 0, transparent 55%),
-              radial-gradient(circle at 100% 0, #ffd9f2 0, transparent 55%),
-              linear-gradient(135deg, #f9739b 0%, #ec4899 45%, #db2777 100%);
-  color: white;
-  border: none;
+  padding: 0.85rem 1.1rem;
+  background:
+    radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.35) 0, transparent 55%),
+    radial-gradient(circle at 100% 0, rgba(255, 255, 255, 0.25) 0, transparent 55%),
+    linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.8);
   border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 700;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 0.5rem;
@@ -426,13 +427,17 @@ const handleImageError = (event) => {
 }
 
 .add-to-cart-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(194, 24, 91, 0.45);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 10px 24px rgba(233, 30, 99, 0.55),
+    0 6px 16px rgba(236, 72, 153, 0.45);
 }
 
 .add-to-cart-btn:disabled {
-  background: #ccc;
+  background: #e5e7eb;
+  border-color: #e5e7eb;
   cursor: not-allowed;
+  color: #9ca3af;
 }
 
 .view-details-link {

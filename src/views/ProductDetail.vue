@@ -449,12 +449,15 @@ const addToCart = () => {
 .add-to-cart-btn {
   width: 100%;
   margin-top: 0.5rem;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-weight: 700;
+  padding: 1rem 1.6rem;
+  background:
+    radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.35) 0, transparent 55%),
+    radial-gradient(circle at 100% 0, rgba(255, 255, 255, 0.25) 0, transparent 55%),
+    linear-gradient(135deg, #f9739b 0%, #ec4899 40%, #db2777 75%, #be185d 100%);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  font-weight: 800;
   font-size: 1rem;
   cursor: pointer;
   display: inline-flex;
@@ -467,14 +470,16 @@ const addToCart = () => {
 }
 
 .add-to-cart-btn:hover:not(:disabled) {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 25px rgba(233, 30, 99, 0.5);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(233, 30, 99, 0.6), 0 6px 16px rgba(236, 72, 153, 0.45);
 }
 
 .add-to-cart-btn:disabled {
-  background: #d1d5db;
+  background: #e5e7eb;
+  border-color: #e5e7eb;
   box-shadow: none;
   cursor: not-allowed;
+  color: #9ca3af;
 }
 
 .btn-icon {
